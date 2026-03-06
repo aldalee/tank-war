@@ -10,10 +10,7 @@ import java.awt.event.WindowEvent;
  * 坦克大战游戏主窗口类
  */
 public class TankFrame extends Frame {
-    private static final int SPEED = 10;
-
-    private int x = 200, y = 200;
-    private Dir dir = Dir.DOWN;
+    Tank tank = new Tank(200, 200, Dir.DOWN);
 
     public TankFrame() {
         this.setTitle("Tank War");
@@ -61,24 +58,15 @@ public class TankFrame extends Frame {
         }
 
         private void updateTankDir() {
-            if (bL) dir = Dir.LEFT;
-            else if (bU) dir = Dir.UP;
-            else if (bR) dir = Dir.RIGHT;
-            else if (bD) dir = Dir.DOWN;
+            if (bL) tank.setDir(Dir.LEFT);
+            else if (bU) tank.setDir(Dir.UP);
+            else if (bR) tank.setDir(Dir.RIGHT);
+            else if (bD) tank.setDir(Dir.DOWN);
         }
     }
 
     @Override
     public void paint(Graphics g) {
-        g.fillRect(x, y, 50, 50);
-
-        switch (dir) {
-            case LEFT -> x -= SPEED;
-            case UP -> y -= SPEED;
-            case RIGHT -> x += SPEED;
-            case DOWN -> y += SPEED;
-            default -> {
-            }
-        }
+        tank.paint(g);
     }
 }
