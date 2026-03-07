@@ -12,13 +12,11 @@ public class Bullet {
     private int x, y;
     private final Dir dir;
     private boolean inactive;
-    private TankFrame frame;
 
-    public Bullet(int x, int y, Dir dir, TankFrame frame) {
+    public Bullet(int x, int y, Dir dir) {
         this.x = x;
         this.y = y;
         this.dir = dir;
-        this.frame = frame;
     }
 
     public void paint(Graphics g) {

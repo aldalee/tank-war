@@ -11,7 +11,7 @@ public class Tank {
     private int x, y;
     private Dir dir;
     private boolean moving;
-    private TankFrame frame;
+    private final TankFrame frame;
 
     public Tank(int x, int y, Dir dir, TankFrame frame) {
         super();
@@ -60,6 +60,6 @@ public class Tank {
     }
 
     public void fire() {
-        frame.bullets.add(new Bullet(x, y, dir, frame));
+        frame.bullets.add(new Bullet(x, y, dir));
     }
 }
