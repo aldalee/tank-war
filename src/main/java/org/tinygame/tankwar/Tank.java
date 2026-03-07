@@ -11,12 +11,14 @@ public class Tank {
     private int x, y;
     private Dir dir;
     private boolean moving;
+    private TankFrame frame;
 
-    public Tank(int x, int y, Dir dir) {
+    public Tank(int x, int y, Dir dir, TankFrame frame) {
         super();
         this.x = x;
         this.y = y;
         this.dir = dir;
+        this.frame = frame;
     }
 
 
@@ -52,5 +54,9 @@ public class Tank {
             default -> {
             }
         }
+    }
+
+    public void fire() {
+        frame.bullet = new Bullet(x, y, dir);
     }
 }
