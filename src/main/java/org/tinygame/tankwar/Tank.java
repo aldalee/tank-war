@@ -2,6 +2,9 @@ package org.tinygame.tankwar;
 
 import java.awt.*;
 
+/**
+ * 坦克类
+ */
 public class Tank {
     private static final int SPEED = 10;
 
